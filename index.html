@@ -4,18 +4,42 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="./css/style.css">
 	<title>Encriptador de Texto - Alura Challenges ONE</title>
 </head>
 <body>
+	<header>
+		<div>
+			<h1><img class="logo" src="./asset/image/Logo.png" alt="Logo Alura"></h1>
+		</div>
+	</header>
 	<main>
-		<input name="test" type="text"> 
-		<button>Encriptar</button>
-		<button>Desencriptar</button>
-		<textarea placeholder="Resultado"></textarea>
+		<div>
+			<div class="insert">
+				<textarea placeholder="Ingrese el texto aqui"></textarea>
+				<div class="hint">
+					<img class="icon" src="./asset/image/Warning.png" alt="">
+					<a class="message">Solo letras minúsculas y sin acento</a>
+				</div>
+				<div class="botones">
+					<a class="boton encrypt">Encriptar</a>
+					<a class="boton decrypt">Desencriptar</a>
+				</div>
+			</div>
+			<div class="result">
+				<img src="./asset/image/Muñeco.png" alt="">
+				<a class="msg-nofound">Ningún mensaje fue encontrado</a>
+				<a class="msg-info">Ingresa el texto que desees encriptar o desencriptar.</a>
+			</div>
+			<!-- <div class="result">
+				<textarea disabled>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci montes, sit et diam risus scelerisque vitae est. Tortor maecenas nunc ut laoreet. Eget diam mauris quam quisque ut eget fringilla sit elit. Libero, sodales duis fames id diam feugiat aliquet non egestas.</textarea>
+				<a class="boton copy">Copiar</a>
+			</div> -->
+		</div>
 	</main>
 	<footer>
-		Xander.- | Challenge ONE
+		<a href="https://github.com/soyXander" target="_blank">Gabriel Humerez Romero | Alura Challenge ONE</a>
 	</footer>
 </body>
 </html>
