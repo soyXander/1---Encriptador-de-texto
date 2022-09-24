@@ -52,11 +52,17 @@ body {
     size: 12px;
     line-height: 18px;
 }
+.hint .error {
+    color: red !important;
+    transition: opacity 2s;
+    animation: shake 0.75s;
+}
 
 .botones {
     display: flex;
     flex-direction: row;
     align-self: flex-start;
+    cursor: default;
     padding: 0;
     gap: 24px;
 }
@@ -73,12 +79,19 @@ body {
 .encrypt {
     background: #0A3871;
     color: white;
+    transition: opacity 2s;
 }
 .encrypt:hover {
     background: #0d4488;
 }
 .encrypt:active {
     background: #072850;
+}
+.enc-ok {
+    background: green !important;
+}
+.enc-error {
+    background: red !important;
 }
 
 .decrypt {
@@ -92,12 +105,23 @@ body {
 .decrypt:active {
     background: #b6bdc5;
 }
+.dec-ok {
+    background: green !important;
+    color: white;
+    border: 1px solid green;
+}
+.dec-error {
+    background: red !important;
+    color: white;
+    border: 1px solid red;
+}
 
 .copy {
     background: white;
     color: #0A3871;
     border: 1px solid #0A3871;
     width: 285px;
+    cursor: default;
 }
 .copy:hover {
     background: #dee6f0;
@@ -105,8 +129,65 @@ body {
 .copy:active {
     background: #b6bdc5;
 }
+.copy-ok {
+    background: green !important;
+    color: white;
+    border: 1px solid green;
+}
+.tooltip {
+    display:inline-block;
+    position:relative;
+    border-bottom:1px dotted #666;
+    text-align:left;
+}
+.tooltip .top {
+    min-width:150px; 
+    top:-20px;
+    left:50%;
+    transform:translate(-50%, -100%);
+    padding:5px 10px;
+    color:green;
+    background-color:#111111;
+    font-weight: 400;
+    font-size:16px;
+    border-radius:8px;
+    position:absolute;
+    display: flex;
+    justify-content: center;
+    box-sizing:border-box;
+    border:1px solid transparent;
+    box-shadow:0 1px 8px rgba(0,0,0,0.5);
+    visibility:hidden;
+    opacity:0;
+    transition: opacity 0.8s;
+}
+.copied {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
 
-.result {
+.tooltip .top i {
+    position:absolute;
+    top:100%;
+    left:50%;
+    margin-left:-12px;
+    width:24px;
+    height:12px;
+    overflow:hidden;
+}
+
+.tooltip .top i::after {
+    content:'';
+    position:absolute;
+    width:12px;
+    height:12px;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(45deg);
+    background-color:#111111;
+    border:1px solid transparent;box-shadow:0 1px 8px rgba(0,0,0,0.5);
+}
+
+.results {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -121,7 +202,7 @@ body {
     box-shadow: 0 24px 32px -8px rgba(0, 0, 0, 0.08);
     border-radius: 32px;
 }
-.result textarea {
+.results textarea {
     width: 100%;
     height: 100%;
     resize: none;
@@ -135,11 +216,11 @@ body {
     line-height: 48px;
 }
 
-.result img {
+.results img {
     width: 336px;
     height: 304px;
 }
-.result p {
+.results p {
     font-weight: 700;
     font-size: 24px;
     line-height: 36px;
@@ -181,3 +262,17 @@ footer a {
     color: #495057;
     text-decoration: none;
 }
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
